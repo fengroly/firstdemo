@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo3.mapper.UserMapper">
+
+    <resultMap id="user" type="com.example.demo3.model.User">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="pass_word" jdbcType="VARCHAR" property="passWord" />
+        <result column="real_name" jdbcType="VARCHAR" property="realName" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    </resultMap>
+
+    <select id="getUserList" resultMap="user">
+        SELECT * FROM USER
+    </select>
+
+    <select id="getJsonUserList" resultType="com.example.demo3.model.JsonUser">
+        SELECT * FROM USER
+    </select>
+
+</mapper>

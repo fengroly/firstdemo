@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo3.mapper.ExcelUserMapper">
+
+    <resultMap id="user" type="com.example.demo3.model.ExcelUser">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="dept_id" jdbcType="INTEGER" property="deptId" />
+        <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+        <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+        <result column="sex" jdbcType="VARCHAR" property="sex" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="salt" jdbcType="VARCHAR" property="salt" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="refuse_des" jdbcType="VARCHAR" property="refuseDes" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    </resultMap>
+
+    <select id="getUserList" resultMap="user">
+        SELECT * FROM excel_user
+    </select>
+
+</mapper>

@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+  redis:
+    host: localhost
+    port: 6379
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+    timeout: 0
+    password:
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
+  topic:
+    user: topic-user
+  group:
+    id: group-user
+
+user:
+  id: 1
+  name: fengguang
+  age: 30
+
+
+#  data:
+#    elasticsearch:
+#      cluster-name: myes
+#      #      cluster-nodes: 127.0.0.1:9300
+#      cluster-nodes: hadoop137:9300,hadoop138:9300,hadoop139:9300
+
+##动态权限配置文件
+#List<Map<String, String>>
+permission-config:
+  perms:
+    - url: /cat
+      permission: roles[cat]
+    - url: /dog
+      permission: roles[dog]
+    - url: /sing
+      permission: perms[sing]
+    - url: /jump
+      permission: perms[jump]
+    - url: /rap
+      permission: perms[rap]
+    - url: /basketball
+      permission: perms[basketball]
